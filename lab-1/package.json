@@ -1,0 +1,16 @@
+{
+  "name": "lab-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "w3c-html-validator": "^1.8.3"
+  }
+}
