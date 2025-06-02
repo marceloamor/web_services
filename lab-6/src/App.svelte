@@ -1,7 +1,7 @@
 <script>
   import Search from "./lib/Search.svelte";
   import ImageGrid from "./lib/ImageGrid.svelte";
-
+  import Pages from "./lib/Pages.svelte";
   let images;
 
   let page = 1;
@@ -58,6 +58,11 @@
 
     return _images;
   }
+
+  function changePage(event) {
+    page = event.detail.page;
+    images = getSearchResults(term);
+  }
 </script>
 
 <main>
@@ -68,6 +73,7 @@
       <p>Loading...</p>
     {:then img}
       <ImageGrid images="{img}" />
+      <Pages page="{page}" pages="{pages}" on:change="{changePage}" />
     {:catch error}
       <p style="color: red">{error.message}</p>
     {/await}

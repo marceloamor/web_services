@@ -1,11 +1,15 @@
 <script>
     import pagination from "./pagination.js";
+    import { createEventDispatcher } from "svelte";
   
     export let pages;
     export let page;
+
+    const dispatch = createEventDispatcher();
   
     function changePage(pg) {
       // Dispatch event called change here
+      dispatch('change', { page: pg });
     }
   </script>
   
